@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Remote</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <script>window.$ = window.jQuery = require('jquery');</script>
+    <script>
+        require('./renderer.js')
+        require('./settings.js')
+    </script>
+    <style>
+        * {
+            font-family: Helvetica, sans-serif, Arial;
+            font-size: 20px;
+        }
+
+        html {
+            width: 100%;
+        }
+
+        body {
+            padding: 10px;
+            margin: 0;
+            width: 100%;
+            min-height: 100%;
+            background: white;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        sub,
+        sup {
+            font-size: 15px;
+            padding: 5px;
+            float: right;
+        }
+
+
+
+        #status {
+            background-color: rgb(211, 211, 211);
+            display: inline;
+        }
+
+        #status.ok {
+            color: green;
+        }
+
+        ;
+
+        #status.err {
+            color: red;
+        }
+
+        #remote {
+            margin: auto;
+            max-width: 50%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #remote > div {
+            background-color: grey;
+            padding: 10px;
+            border: 5px white solid;
+            border-radius: 12px;
+            box-sizing: border-box;
+            flex-basis: 50%;
+        }
+
+        @keyframes buttonpress {
+            0% {
+                background-color: grey;
+            }
+
+            50% {
+                background-color: rgb(121, 54, 49);
+            }
+
+            100% {
+                background-color: grey;
+            }
+
+        }
+
+        #remote>div.active {
+
+            animation-name: buttonpress;
+            animation-duration: 0.7s;
+        }
+
+        #remote>div.power {
+            flex-basis: 100%;
+            background-color: rgb(247, 60, 60);
+        }
+
+        body #remote>div:hover {
+            background-color: rgb(176, 189, 228);
+        }
+
+        body #settings {
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+        }
+
+        
+    </style>
+    <style id="userstyle">
+
+    </style>
+</head>
+
+<body>
+
+    <div id="maincontent">
+        <div class="buttons">
+            <div class="btn-settings">Settings</div>
+
+
+            <div class="btn-close" data-key="Alt+A">Close</div>
+        </div>
+
+        <h1>Status: <div id="status"></div>
+        </h1>
+
+        <div id="remote">
+
+        </div>
+
+    </div>
+
+    <div id="settings" style="display:none">
+
+        <div class="buttons">
+
+            <div class="btn-save">Save</div>
+            <div class="btn-devtools">Toggle Devtools (inspector)!</div>
+            <div class="btn-reset">Reset to defaults!</div>
+            <div class="btn-back">Back</div>
+        </div>
+
+        <h1>Settings</h1>
+        <div class="scontent">
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>

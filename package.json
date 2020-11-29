@@ -1,0 +1,25 @@
+{
+  "name": "remote",
+  "version": "1.0.0",
+  "description": "Arduino Remote Controller UI",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "install": "electron-rebuild"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^10.1.6",
+    "electron-rebuild": "^2.3.2"
+  },
+  "dependencies": {
+    "auto-launch": "^5.0.5",
+    "electron-localshortcut": "^3.2.1",
+    "jquery": "^3.5.1",
+    "node-notifier": "^8.0.0",
+    "serialport": "^9.0.2"
+  }
+}
