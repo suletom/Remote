@@ -1,6 +1,30 @@
 # Remote
 IR Remote electron.js app to control IR gadgets for example with an arduino 
 
+# Compile & run (Tested on ubuntu 20.04)
+
+Clone the repository: git clone https://github.com/suletom/Remote
+
+```
+cd Remote
+
+sudo apt install nodejs
+
+sudo apt install npm
+
+npm install electron --save-dev
+
+npm i
+
+npm start
+
+npm install electron-packager --save-dev
+
+./node_modules/electron-packager/bin/electron-packager.js . Remote --all
+
+```
+
+
 # What the hack is this?
 This simple app sits on the tray and can be toggled to fullscreen. The UI (which is just a bunch of remote control buttons with keyboard shortcuts) is dinamically configurable from settings. The goal of the app is to connect and send simple commands to serial port by the buttons.
 
