@@ -12,7 +12,7 @@ sudo apt install nodejs
 
 sudo apt install npm
 
-npm install electron --save-dev
+npm install electron --save-dev 
 
 npm i
 
@@ -20,6 +20,7 @@ npm start
 
 npm install electron-packager --save-dev
 
+#to create binary package
 ./node_modules/electron-packager/bin/electron-packager.js . Remote --all
 
 ```
