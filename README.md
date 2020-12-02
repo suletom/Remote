@@ -84,5 +84,5 @@ I found some laying around cheap chinese components:
 - IR Led + 1 resistor
 - and some wires
 
-# By using the following software solution the device statisfied our family needs
+## By using the following software solution the device statisfied our family needs
 
