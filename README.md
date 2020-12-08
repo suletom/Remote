@@ -85,5 +85,8 @@ I found some laying around cheap chinese components:
 - IR Led + 1 resistor
 - and some wires
 
+More info:
+[https://github.com/suletom/Remote-Arudino](https://github.com/suletom/Remote-Arudino)
+
 ## By using the following software solution the device satisfies our needs
 
