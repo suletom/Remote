@@ -4,6 +4,7 @@ const fs = require('fs');
 const AutoLaunch = require("auto-launch");
 const notifier = require('node-notifier');
 const electronLocalshortcut = require('electron-localshortcut');
+const path = require('path')
 
 var autoLauncher = new AutoLaunch({
   name: APPNAME
@@ -11,7 +12,7 @@ var autoLauncher = new AutoLaunch({
 
 app.allowRendererProcessReuse = false;
 
-const settingspath = app.getPath('userData') + "/userconfig.json";
+const settingspath = app.getPath('userData') +path.sep + "userconfig.json";
 
 let win = null;
 

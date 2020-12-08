@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             let tmp="";
             let args="";
-            console.log(config[i]["value"][j]['runcmd']);
+            //console.log(config[i]["value"][j]['runcmd']);
             if ((config[i]["value"][j]['runcmd'])==undefined ) {
 
             }else if (Array.isArray(config[i]["value"][j]['runcmd'])) {
