@@ -44,7 +44,7 @@ sform.select = function (name, values, labels, value, def) {
     if (labels[i] !== undefined) {
       let beh=this.escape(labels[i]);
       let val=this.escape(values[i]);
-      
+
       cv += `
       <option value="${val}" ${($.inArray(values[i], vals)!=-1) ? "selected" : ""}>${beh}</option>
       `;
@@ -110,6 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
     $('#maincontent').hide();
     $('#settings').show();
   });
+
   $(".btn-close").on('click', function () {
     ipcRenderer.send('request-toggle', {});
   });
@@ -118,10 +119,11 @@ document.addEventListener('DOMContentLoaded', function () {
     savesettings();
 
   });
+
   $(".btn-back").on('click', function () {
     $('#settings').hide();
     $('#maincontent').show();
-    
+
   });
 
   $(".btn-devtools").on('click', function () {
