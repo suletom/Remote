@@ -198,8 +198,8 @@ function connectport(ports, i) {
         }
 
         if (i == ports.length - 1) {
-          console.log("Not connected: Check serial device and permissions!");
-          setstatus("Not connected: Check serial device and permissions!", "err");
+          console.log("Not connected: Check log under settings/devtools!");
+          setstatus("Not connected: Check log under settings/devtools!", "err");
         }
         connectport(ports, i + 1);
 
