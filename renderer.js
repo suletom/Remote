@@ -109,8 +109,7 @@ function handlekey(e) {
         }else{
           keycommand = function () {};
         }
-        
-        keycommand();
+        //keycommand();
       }
 
       let cansend = 0;
