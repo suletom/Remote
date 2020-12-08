@@ -25,7 +25,7 @@ npm install electron-packager --save-dev
 
 ```
 For ir sender Arduino example visit:
-[a link](https://github.com/suletom/Remote-Arudino)
+[https://github.com/suletom/Remote-Arudino](https://github.com/suletom/Remote-Arudino)
 
 # What the hack is this?
 This simple app sits on the tray and can be toggled to fullscreen. The UI (which is just a bunch of remote control buttons with keyboard shortcuts) is dynamically configurable from settings. The goal of the app is to connect and send simple commands to serial port by the buttons.
