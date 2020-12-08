@@ -27,14 +27,14 @@ npm install electron-packager --save-dev
 
 
 # What the hack is this?
-This simple app sits on the tray and can be toggled to fullscreen. The UI (which is just a bunch of remote control buttons with keyboard shortcuts) is dinamically configurable from settings. The goal of the app is to connect and send simple commands to serial port by the buttons.
+This simple app sits on the tray and can be toggled to fullscreen. The UI (which is just a bunch of remote control buttons with keyboard shortcuts) is dynamically configurable from settings. The goal of the app is to connect and send simple commands to serial port by the buttons.
 
 # Motivation
 This stuff meant to be the controller of a poor mans HDMI-CEC adapter. 
 The idea is simple: This is a way of controlling a TV with IR from a low cost HTPC with a cheap microcontroller equipped with serial connection (like an arduino nano).
 
 ## 1. My original problem was, i realized that most of smart TV-s are not supported very well by manufacturers:
-- no updates after 2-3 years (the internet moves on and the user expreicence becomes slower and slower)
+- no updates after 2-3 years (the internet moves on and the user experience becomes slower and slower)
 - no usable browser
 - barely working integrated streaming service apps with bunch of ads and bloatware (not child friendly)
 - programming API-s difficult to use
@@ -47,7 +47,7 @@ Pros:
 - low power
 - support for HDMI-CEC: can control TV, but needs some hacking
 - HW supported video decoding on desktop with minimal hacking
-- real PC like desktop experince
+- real PC like desktop experience
 
 Cons: 
 - slow (due to the SD card)
@@ -61,7 +61,7 @@ Pros:
 - SATA SSD support, RAM upgrade possible
 - passive cooling (quiet)
 - full featured 64bit OS can be run: Ubuntu, Windows, etc...
-- real PC like desktop experince
+- real PC like desktop experience
 - browser works well (even with HW VIDEO acceleration)
 - ADBlocking easily available (child friendly :) )
 
@@ -72,17 +72,17 @@ Cons:
 - i found only one manufacturer
 - no local dealer in our country
 - used ones on the market not available
-- buying from the states takes months and the final cost with shipping and VAT is comparable to the price of a Rasberry pi 4 :)
+- buying from the states takes months and the final cost with shipping and VAT is comparable to the price of a Raspberry pi 4 :)
 - needs software hacking
 
 # Conclusion:
-What if i could build a device with the same or perhaps with more funcionality?
+What if i could build a device with the same or perhaps with more functionality?
 
 I found some laying around cheap chinese components:
 - an USB cable
-- arudino nano (2 USD)
+- Arduino nano
 - IR Led + 1 resistor
 - and some wires
 
-## By using the following software solution the device statisfied our family needs
+## By using the following software solution the device satisfies our needs
 

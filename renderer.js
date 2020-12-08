@@ -46,7 +46,7 @@ async function renderui(config) {
 
   let btns = "";
   $.each(config.buttons.value, function (k, v) {
-    btns += `<div class="${v["name"].toLowerCase()}" data-action="${v["action"]}" data-wakeup="${v["wakeup"]}" data-runcmd="${v["runcmd"]}" data-key="${v["key"]}">${v["name"]}<sub>${v["key"]}</sub></div>`;
+    btns += `<div class="${v["name"].toLowerCase()}" data-action="${escape(v["action"])}" data-wakeup="${v["wakeup"]}" data-runcmd="${escape(JSON.stringify(v["runcmd"]))}" data-key="${escape(v["key"])}">${v["name"]}<sub>${v["key"]}</sub></div>`;
 
   });
 
@@ -99,13 +99,18 @@ function handlekey(e) {
       let ircode = $(this).data('action');
 
 
-      if ($(this).data('runcmd') != "") {
-        let command = $(this).data('runcmd').split(' ');
-        let f = command[0];
-        command.shift();
-
-        keycommand = function () { console.log("running command: "+f,command); spawn(f, command); };
+      if ($(this).data('runcmd') != undefined && $(this).data('runcmd') != "") {
+        let command=$(this).data('runcmd');
         
+        if (Array.isArray(command)){
+        let f = command[0];
+          command.shift();
+          keycommand = function () { console.log("running command: "+f,command); spawn(f, command); };
+        }else{
+          keycommand = function () {};
+        }
+        
+        keycommand();
       }
 
       let cansend = 0;
@@ -238,5 +243,14 @@ function connectport(ports, i) {
     }
   });
 
-  setTimeout(function () { statuscallback(port, ports, i, 'timeout', ''); }, 500);
+  setTimeout(function () { statuscallback(port, ports, i, 'timeout', ''); }, 2000);
+}
+
+function escape(str){
+  return String(str).
+            replace(/&/g, '&amp;').
+            replace(/</g, '&lt;').
+            replace(/>/g, '&gt;').
+            replace(/"/g, '&quot;').
+            replace(/'/g, '&#039;');
 }

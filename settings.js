@@ -82,7 +82,13 @@ async function savesettings() {
           o["key"]=$(this).find('.btkey input').val();
           o["global"]=$(this).find('.btglobal select').val();
           o["wakeup"]=$(this).find('.btwakeup select').val();
-          o["runcmd"]=$(this).find('.btruncmd input').val();
+          let btmp=[$(this).find('.btruncmd input:first').val()];
+          $(this).find('.btruncmd input:gt(0)').each(function(){
+            if ($(this).val()!='') {
+              btmp.push($(this).val());
+            }  
+          }); 
+          o["runcmd"]=btmp;
           tmp.push(o);
 
         }); 
@@ -180,8 +186,22 @@ document.addEventListener('DOMContentLoaded', function () {
             cv += sform.select(i + "-wakeup[]", ["0", "1"], ["No", "Yes"], config[i]["value"][j]['wakeup']);
             cv += "</div>";
             cv += "<div class=\"btruncmd\"><label>Run command after action</label>";
-            cv += sform.input(i + "-runcmd[]", (config[i]["value"][j]['runcmd'])==undefined?'':config[i]["value"][j]['runcmd']);
-            cv += "</div>";
+
+            let tmp="";
+            let args="";
+            console.log(config[i]["value"][j]['runcmd']);
+            if ((config[i]["value"][j]['runcmd'])==undefined ) {
+
+            }else if (Array.isArray(config[i]["value"][j]['runcmd'])) {
+
+              for (let m=0;m<config[i]["value"][j]['runcmd'].length;m++){
+                if (m==0) tmp=config[i]["value"][j]['runcmd'][0];
+                else args+=sform.input(i + "-runcmd[]",config[i]["value"][j]['runcmd'][m]);
+              }
+            }
+
+            cv += sform.input(i + "-runcmd[]",tmp);
+            cv += `<a href="javascript:void(0);" onclick="$(this).prev().clone().appendTo($(this).parent()); $(this).parent().find('input:last').val('');">+ ARG</a>${args}</div>`;
             cv += "</div>";
           }
           break;

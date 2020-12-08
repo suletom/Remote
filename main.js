@@ -126,11 +126,13 @@ function registershortcuts(config) {
 
     //console.log(config['buttons']['value'][j]['key']);
 
+    if (config['buttons']['value'][j]['key']=="") continue; 
+
     if (config['buttons']['value'][j]['global'] == 1) {
       //console.log("Registering global shortcut: " + config['buttons']['value'][j]['key'] + " for " + config['buttons']['value'][j]['name']);
 
       try {
-
+        
         globalShortcut.register(config['buttons']['value'][j]['key'], () => {
           
             win.webContents.send("initiate-keypress", config['buttons']['value'][j]['key']);
@@ -174,7 +176,6 @@ function createWindow() {
     fullscreen: true,
     frame: false,
     show: false,
-    maximizable: false,
     minimizable: false,
     alwaysOnTop: true,
     fullscreenable: false,
