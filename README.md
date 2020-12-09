@@ -16,11 +16,13 @@ npm install electron --save-dev
 
 npm i
 
+#starting the app
 npm start
 
+#packager i used for creating binary
 npm install electron-packager --save-dev
 
-#to create binary package
+#to create binary package run:
 ./node_modules/electron-packager/bin/electron-packager.js . Remote --all
 
 ```
