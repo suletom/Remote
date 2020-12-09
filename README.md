@@ -32,6 +32,8 @@ For ir sender Arduino example visit:
 # What the hack is this?
 This simple app sits on the tray and can be toggled to fullscreen. The UI (which is just a bunch of remote control buttons with keyboard shortcuts) is dynamically configurable from settings. The goal of the app is to connect and send simple commands to serial port by the buttons.
 
+![Remote demo screenshot](https://github.com/suletom/Remote/raw/main/remote.jpg)
+
 # Motivation
 This stuff meant to be the controller of a poor mans HDMI-CEC adapter. 
 The idea is simple: This is a way of controlling a TV with IR from a low cost HTPC with a cheap microcontroller equipped with serial connection (like an arduino nano).
