@@ -41,7 +41,7 @@ function readconfig() {
 
   var configdef = {
     'serialdevs': { 'label': 'Serial Devices to try', 'type': 'input', 'default': '/dev/ttyUSB0,/dev/ttyUSB1,/dev/ttyACM0,/dev/ttyACM1' },
-    'autostart': { 'label': 'Start automatically', 'type': 'yesno', 'default': 0 },
+    'autostart': { 'label': 'Start automatically', 'type': 'yesno', 'default': '0' },
     'showhide': { 'label': 'Show/Hide shortcut (Requires restart!)', 'type': 'keycode', 'default': 'Alt+A' },
     'css': { 'label': 'CSS', 'type': 'textarea', 'default': '' },
     'buttons': {
@@ -84,16 +84,19 @@ function readconfig() {
     }
   }
 
+  console.log("autostart init!");
   autoLauncher.isEnabled().then(function (isEnabled) {
     if (isEnabled) {
       if (configdef['autostart']['value'] == 0) {
         autoLauncher.disable();
+        console.log("disabling autostart!");
       }
 
     } else {
 
       if (configdef['autostart']['value'] == 1) {
         autoLauncher.enable();
+        console.log("enabing autostart!");
       }
 
     }

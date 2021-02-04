@@ -73,6 +73,9 @@ async function savesettings() {
       case 'input':
         config[i]["value"] = $('.scontent .setting.input#' + i).find('input').val();
         break;
+      case 'yesno':
+        config[i]["value"] = $('.scontent .setting.yesno#' + i).find('select').val();
+        break;
       case 'buttons':
         let tmp=[];
         config[i]["value"] = $('.scontent .setting.buttons#' + i + " > div").each(function () {

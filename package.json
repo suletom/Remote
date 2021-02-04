@@ -12,8 +12,8 @@
   "author": "suletom",
   "license": "GPLv2",
   "devDependencies": {
-    "electron": "^10.1.6",
-    "electron-packager": "^15.1.0",
+    "electron": "^10.1.7",
+    "electron-packager": "^15.2.0",
     "electron-rebuild": "^2.3.2"
   },
   "dependencies": {
