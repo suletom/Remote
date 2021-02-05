@@ -199,9 +199,10 @@ function createWindow() {
     {
       label: "Show/hide (" + config['showhide']['value'] + ")", click: (item, window, event) => {
         if (win.isVisible()) {
-          win.hide()
+          win.hide();
         }else{
-          win.show()
+          win.show();
+          win.setFullScreen(true);
           win.focus();
         }
       }
@@ -213,9 +214,10 @@ function createWindow() {
 
   ipcMain.on('request-toggle', (event, arg) => {
     if (win.isVisible()) {
-      win.hide()
+      win.hide();
     }else{
-      win.show()
+      win.show();
+      win.setFullScreen(true);
       win.focus();
     }
   });
